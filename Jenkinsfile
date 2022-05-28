@@ -5,7 +5,7 @@ pipeline {
         stage('Clone Repo') {
           steps {
             sh 'rm -rf dockertest1'
-            sh 'git clone https://github.com/nareshmanojari1/dockertest1.git'
+            sh 'git clone https://github.com/nareshmanojari/dockertest1.git'
             }
         }
 
@@ -13,13 +13,13 @@ pipeline {
           steps {
             sh 'cd /var/lib/jenkins/workspace/pipeline2/dockertest1'
             sh 'cp  /var/lib/jenkins/workspace/pipeline2/dockertest1/* /var/lib/jenkins/workspace/pipeline2'
-            sh 'docker build -t nareshmanojari1/pipelinetest:v1 .'
+            sh 'docker build -t nareshmanojari/pipelinetest:v1 .'
             }
         }
 
         stage('Push Image to Docker Hub') {
           steps {
-           sh    'docker push nareshmanojari1/pipelinetest:v1'
+           sh    'docker push nareshmanojari/pipelinetest:v1'
            }
         }
 
