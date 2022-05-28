@@ -5,7 +5,7 @@ pipeline {
         stage('Clone Repo') {
           steps {
             sh 'rm -rf dockertest1'
-            sh 'git clone https://github.com/mavrick202/dockertest1.git'
+            sh 'git clone https://github.com/nareshmanojari1/dockertest1.git'
             }
         }
 
@@ -19,7 +19,7 @@ pipeline {
 
         stage('Push Image to Docker Hub') {
           steps {
-           sh    'docker push sreeharshav/pipelinetest:v1'
+           sh    'docker push nareshmanojari1/pipelinetest:v1'
            }
         }
 
